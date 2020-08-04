@@ -20,3 +20,23 @@ import "css/site";
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+window.emailValidator = function(id)
+{
+	document.getElementById("submit-button").disabled = true;
+	var input_text = document.getElementById(id).value;
+	console.log(input_text);
+	if (input_text && !(/@getmainstreet.com\s*$/.test(input_text)))
+	{
+		document.getElementById(id).style.borderColor = "red";
+		document.getElementById("emailError").innerHTML = "Must be a getmainstreet.com account only";
+		return false;
+	}
+	else
+	{
+		document.getElementById("submit-button").disabled = false;
+		document.getElementById("emailError").innerHTML = "";
+		document.getElementById(id).style.borderColor = "green";
+		return true;
+	}
+
+}

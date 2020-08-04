@@ -53,7 +53,8 @@
       </div>
       <div class="col-lg offset-lg-1">
         <div class="form-group">
-          <%= f.text_field :email, class: "form-control", placeholder: "hello@company.com"%>
+          <%= f.text_field :email, class: "form-control", id: "mainstreet-email", placeholder: "hello@company.com", onchange: "emailValidator(this.id)"%>
+          <span id="emailError"></span>
         </div>
       </div>
     </div>
@@ -62,7 +63,7 @@
     <div class="row my-lg-3">
       <div class="col">
         <div class="form-group">
-          <%= f.submit class: "btn btn-success"%>
+          <%= f.submit class: "btn btn-success", id: "submit-button"%>
         </div>
       </div>
     </div>
